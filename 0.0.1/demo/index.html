@@ -7,7 +7,26 @@
 </head>
 <body>
 <h2>Svgexpression的demo</h2>
-
+10%
+<div id="demo1"></div>
+20%
+<div id="demo2"></div>
+30%
+<div id="demo3"></div>
+40%
+<div id="demo4"></div>
+50%
+<div id="demo5"></div>
+60%
+<div id="demo6"></div>
+70%
+<div id="demo7"></div>
+80%
+<div id="demo8"></div>
+90%
+<div id="demo9"></div>
+100%
+<div id="demo10"></div>
 <script>
     var S = KISSY;
     if (S.Config.debug) {
@@ -25,7 +44,14 @@
     }
 
     S.use('kg/svgexpression/0.0.1/index', function (S, Svgexpression) {
-        new Svgexpression();
+        for (var i = 1; i <= 10; i++) {
+            new Svgexpression({
+                container: '#demo'+i,
+                level: i*10,
+                width: 50,
+                height: 50
+            });
+        };
     })
 </script>
 </body>
