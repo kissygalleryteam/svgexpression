@@ -1,0 +1,1 @@
+KISSY.add('kg/svgexpression/0.0.1/index',["node","base"],function(S ,require, exports, module) {var e=require("node").all,t=require("base"),r=t.extend({initializer:function(){{var e=this;e.get("$target")}}},{ATTRS:{$target:{value:"",getter:function(t){return e(t)}}}});module.exports=r;});
