@@ -1,1 +1,0 @@
-KISSY.config("modules",{"kg/svgexpression/0.0.2/index":{requires:["node","base"]}});
