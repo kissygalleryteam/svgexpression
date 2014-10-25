@@ -1,11 +1,11 @@
 /*
-Sat Oct 25 2014 21:30:14 GMT+0800 (CST)
+Thu Oct 23 2014 21:33:45 GMT+0800 (CST)
 combined files by KMD:
 
 index.js
 */
 
-KISSY.add('kg/svgexpression/0.0.2/index',["node","base"],function(S ,require, exports, module) {
+KISSY.add('kg/svgexpression/0.0.1/index',["node","base"],function(S ,require, exports, module) {
 var $ = require('node').all;
 var Base = require('base');
 
@@ -16,6 +16,11 @@ var Svgexpression = Base.extend({
         var width = this.get('width');
         var height = this.get('height');
 
+        var face = {
+            r: 80,
+            x: 100,
+            y: 100
+        }
         function createElementNS(nodeName){
             return document.createElementNS('http://www.w3.org/2000/svg',nodeName);
         }
@@ -39,6 +44,10 @@ var Svgexpression = Base.extend({
             var mouthY = (level/100)*40+100;
             if (mouthY==120) {mouthY--}
             svg.appendChild(createpath('M 80 120, Q 100 '+mouthY+' 120 120,z'));
+            // svg.appendChild(createpolyline('50 80, 70 80, 90 80','50 80, 70 '+ (eyePoint>80?80:eyePoint) +', 90 80'));
+            // svg.appendChild(createpolyline('110 80, 130 80, 150 80','110 80, 130 '+ (eyePoint>80?80:eyePoint) +', 150 80'));
+            // var mouthPoint = calcY(level,100,2.5);
+            // svg.appendChild(createpolyline('80 120, 100 120, 120 120','80 120, 100 '+ mouthPoint +', 120 120'));
             return svg;
         }
         /*构建高光*/
@@ -117,6 +126,7 @@ var Svgexpression = Base.extend({
             animate.setAttribute('from',from);
             animate.setAttribute('to',to);
             animate.setAttribute('dur','.5s');
+            // animate.setAttribute('repeatCount','indefinite');
             return animate;
         }
         /*计算表情颜色*/ 
@@ -149,8 +159,6 @@ var Svgexpression = Base.extend({
     ATTRS:{
         container: '',
         level: '',
-        width: '',
-        height: '',
         $target:{
             value:'',
             getter:function(v){
