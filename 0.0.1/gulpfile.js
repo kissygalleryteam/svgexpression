@@ -6,7 +6,7 @@ var src = ".",
     dest = "./build";
 
 //包配置
-var pkg = "kg/svgexpression/0.0.1";
+var pkg = "kg/svgexpression/0.0.2";
 
 //编译模板
 gulp.task('xtpl', function() {
